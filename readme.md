@@ -1,4 +1,4 @@
-# Prüfung der Kontonummer
+# PRÜFUNG der Kontonummer
 
 ## Installation
 
