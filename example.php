@@ -4,9 +4,9 @@ require './vendor/autoload.php';
 
 use Endereco\BankAccountCheck\BankAccount; // Facade definieren.
 
-$bankAccount = "0044649465";
-$bankCode = "79050000";
-$countryCode = "DE";
+$bankAccount = "";
+$bankCode = "";
+$countryCode = "";
 
 if (BankAccount::isCountrySupported($countryCode) && BankAccount::isBankCodeSupported($bankCode)) {
 
@@ -16,11 +16,7 @@ if (BankAccount::isCountrySupported($countryCode) && BankAccount::isBankCodeSupp
 
     // Prüfmethode herausfinden.
     $checkMethod = BankAccount::getCheckMethod($bankCode); // gibt z.B. "08" zurück.
-    echo  $bankAccountValid . PHP_EOL;
-
-    // Prüfziffer herausfinden.
-    $checkSum = BankAccount::getCheckSum($bankAccount); // gibt z.B. "5" zurück. Optional
-    echo  $bankAccountValid . PHP_EOL;
+    echo  $checkMethod . PHP_EOL;
 
 } else {
     // Kontonummer kann nicht geprüft werden.
